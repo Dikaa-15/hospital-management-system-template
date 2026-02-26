@@ -269,6 +269,8 @@
                         </a>
                     </div>
 
+                    <p id="loginError" class="text-xs text-red-600 hidden">Invalid email or password.</p>
+
                     <!-- Submit Button -->
                     <div class="pt-2 animate-fade-in stagger-5">
                         <button type="submit" id="loginBtn" class="btn-primary w-full py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 relative overflow-hidden">
@@ -350,6 +352,17 @@
 
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const password = passwordInput.value;
+            const errorEl = document.getElementById('loginError');
+
+            const routes = {
+                'admin@gmail.com': '../dashboard-admin/dashboard.html',
+                'patient@gmail.com': '../dashboard-patients/overview.html',
+                'docter@gmail.com': '../dashboard-docter/dashboard.html',
+            };
+
+            errorEl.classList.add('hidden');
             
             // Disable button and show spinner
             loginBtn.disabled = true;
@@ -362,16 +375,21 @@
 
             // Simulate API call
             setTimeout(() => {
-                // Reset button state for demo purposes
-                // In real app, you would redirect or handle error here
+                const target = routes[email];
+                if (password === 'password' && target) {
+                    window.location.href = target;
+                    return;
+                }
+
                 loginBtn.disabled = false;
                 loginBtn.classList.remove('opacity-90', 'cursor-not-allowed');
                 btnText.textContent = 'Sign In';
                 btnArrow.classList.remove('hidden');
                 btnSpinner.classList.add('hidden');
-                
-                alert('Login successful! (Demo Mode)');
-            }, 2000);
+                btnSpinner.classList.remove('spinner');
+                errorEl.textContent = 'Invalid email or password.';
+                errorEl.classList.remove('hidden');
+            }, 600);
         });
     </script>
 </body>

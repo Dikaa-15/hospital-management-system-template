@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - NextGen Health</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-jakarta">
+    <div class="min-h-screen">
+        <header class="bg-white border-b border-slate-200">
+            <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-green-400 flex items-center justify-center shadow-lg shadow-green-400/30">
+                        <svg class="w-6 h-6 text-green-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-sm text-slate-500">Admin Panel</div>
+                        <div class="text-lg font-bold">NextGen Health</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a class="text-sm font-semibold text-slate-600 hover:text-slate-900" href="../landing-page.html">Back to Site</a>
+                    <a class="text-sm font-semibold text-green-700" href="../../index.html">All Templates</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-6 py-10 space-y-8">
+            <section class="bg-white border border-slate-200 rounded-2xl p-6">
+                <h1 class="text-2xl font-bold">Admin Dashboard</h1>
+                <p class="text-slate-600 mt-2">Quick access to core areas and template previews.</p>
+            </section>
+
+            <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="../dashboard-docter/dashboard.html">
+                    <div class="text-xs text-slate-500">Doctor</div>
+                    <div class="font-semibold">Doctor Dashboard</div>
+                </a>
+                <a class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="../dashboard-patients/overview.html">
+                    <div class="text-xs text-slate-500">Patient</div>
+                    <div class="font-semibold">Patient Overview</div>
+                </a>
+                <a class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="../dashboard-patients/my-appointments.html">
+                    <div class="text-xs text-slate-500">Patient</div>
+                    <div class="font-semibold">Patient Appointments</div>
+                </a>
+                <a class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="../pricing.html">
+                    <div class="text-xs text-slate-500">Public</div>
+                    <div class="font-semibold">Pricing Page</div>
+                </a>
+                <a class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="../landing-page.html">
+                    <div class="text-xs text-slate-500">Public</div>
+                    <div class="font-semibold">Landing Page</div>
+                </a>
+                <a class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="../auth/sign-in.html">
+                    <div class="text-xs text-slate-500">Auth</div>
+                    <div class="font-semibold">Sign In</div>
+                </a>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
