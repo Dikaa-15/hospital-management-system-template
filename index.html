@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System - Templates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-jakarta">
+    <div class="min-h-screen">
+        <header class="bg-white border-b border-slate-200">
+            <div class="max-w-6xl mx-auto px-6 py-8">
+                <h1 class="text-3xl font-extrabold">Hospital Management System</h1>
+                <p class="text-slate-600 mt-2">Root index untuk navigasi semua template HTML.</p>
+            </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-6 py-10 space-y-10">
+            <section class="bg-white border border-slate-200 rounded-2xl p-6">
+                <h2 class="text-lg font-bold mb-4">Public Pages</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/landing-page.html">
+                        <div class="text-sm text-slate-500">Landing</div>
+                        <div class="font-semibold">Landing Page</div>
+                    </a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/pricing.html">
+                        <div class="text-sm text-slate-500">Pricing</div>
+                        <div class="font-semibold">Pricing Page</div>
+                    </a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/auth/sign-in.html">
+                        <div class="text-sm text-slate-500">Auth</div>
+                        <div class="font-semibold">Sign In</div>
+                    </a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/auth/sign-up.html">
+                        <div class="text-sm text-slate-500">Auth</div>
+                        <div class="font-semibold">Sign Up</div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="bg-white border border-slate-200 rounded-2xl p-6">
+                <h2 class="text-lg font-bold mb-4">Doctor Dashboard</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-docter/dashboard.html">Dashboard</a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-docter/patiensts.html">Patients</a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-docter/appointments.html">Appointments</a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-docter/schedules.html">Schedules</a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-docter/chats.html">Messages</a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-docter/reports.html">Reports</a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-docter/settings.html">Settings</a>
+                </div>
+            </section>
+
+            <section class="bg-white border border-slate-200 rounded-2xl p-6">
+                <h2 class="text-lg font-bold mb-4">Patient Portal</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-patients/overview.html">Overview</a>
+                    <a class="p-4 rounded-xl border border-slate-200 hover:border-green-400 hover:shadow-sm transition" href="templates/dashboard-patients/my-appointments.html">My Appointments</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="max-w-6xl mx-auto px-6 pb-10 text-sm text-slate-500">
+            Deploy-ready for Vercel. Use this page as the entry point.
+        </footer>
+    </div>
+</body>
+</html>
