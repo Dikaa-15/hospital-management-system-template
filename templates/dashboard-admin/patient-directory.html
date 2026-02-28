@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Directory - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: '#4ADE80',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <aside class="w-20 lg:w-64 bg-white border-r border-slate-100 flex flex-col fixed h-full z-30">
+            <div class="p-4 lg:p-6 border-b border-slate-100">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-green-400 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-green-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <span class="hidden lg:block text-lg font-bold text-slate-900">Admin Panel</span>
+                </div>
+            </div>
+            <nav class="flex-1 p-3 lg:p-4 space-y-1 text-sm">
+                <a href="dashboard.html" class="flex items-center gap-3 px-3 py-3 rounded-xl text-slate-500 hover:bg-slate-50">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    <span class="hidden lg:block">System Overview</span>
+                </a>
+                <a href="user-management.html" class="flex items-center gap-3 px-3 py-3 rounded-xl text-slate-500 hover:bg-slate-50">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span class="hidden lg:block">User Management</span>
+                </a>
+                <a href="patient-directory.html" class="flex items-center gap-3 px-3 py-3 rounded-xl bg-green-50 text-green-700 font-semibold" aria-current="page">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A4 4 0 019 16h6a4 4 0 013.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span class="hidden lg:block">Patient Directory</span>
+                </a>
+                <a href="inventory-management.html" class="flex items-center gap-3 px-3 py-3 rounded-xl text-slate-500 hover:bg-slate-50">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7h18M3 12h18M3 17h18"/></svg>
+                    <span class="hidden lg:block">Inventory & Pharmacy</span>
+                </a>
+                <a href="financial-management.html" class="flex items-center gap-3 px-3 py-3 rounded-xl text-slate-500 hover:bg-slate-50">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2"/></svg>
+                    <span class="hidden lg:block">Financial & Billing</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-3 rounded-xl text-slate-500 hover:bg-slate-50">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span class="hidden lg:block">Schedule & Wards</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-3 rounded-xl text-slate-500 hover:bg-slate-50">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <span class="hidden lg:block">System Settings</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-slate-100 text-xs text-slate-500 hidden lg:block">
+                Secure admin access • Audit ready
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <div class="flex-1 ml-20 lg:ml-64">
+            <header class="bg-white border-b border-slate-100 sticky top-0 z-20">
+                <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+                    <div>
+                        <div class="text-xs text-slate-500 uppercase tracking-widest">Master Database</div>
+                        <div class="text-lg font-bold">Patient Directory</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button class="px-4 py-2 rounded-xl border border-slate-200 text-sm text-slate-600">Download Report (CSV/Excel)</button>
+                        <button class="px-4 py-2 rounded-xl bg-green-400 text-green-900 text-sm font-semibold">+ Register New Patient</button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="max-w-7xl mx-auto px-6 py-8 space-y-6">
+                <div class="bg-white border border-slate-100 rounded-2xl p-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                    <div class="flex-1">
+                        <div class="relative">
+                            <input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none" placeholder="Search by name, NIK, BPJS, or Medical Record ID...">
+                            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-3 py-2 rounded-full bg-green-50 text-green-700 text-xs font-semibold">In-patient</button>
+                        <button class="px-3 py-2 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Out-patient</button>
+                        <button class="px-3 py-2 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">ER</button>
+                        <button class="px-3 py-2 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Emergency Contact Missing</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
+                    <div class="bg-slate-50 px-5 py-3 text-xs uppercase tracking-widest text-slate-500 sticky top-0">Central Patient Table</div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="text-xs text-slate-500 uppercase tracking-widest sticky top-0 bg-slate-50">
+                                <tr class="text-left">
+                                    <th class="py-3 px-5">Patient ID</th>
+                                    <th class="py-3">Patient Name</th>
+                                    <th class="py-3">Insurance Type</th>
+                                    <th class="py-3">Last Visit</th>
+                                    <th class="py-3">Status</th>
+                                    <th class="py-3">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-slate-100 hover:bg-slate-50">
+                                    <td class="py-4 px-5 font-bold text-slate-900">MRN-002381</td>
+                                    <td class="py-4">John Doe, 45y / M</td>
+                                    <td class="py-4"><span class="px-3 py-1 rounded-full bg-green-400 text-white text-xs font-semibold">Verified Insurance</span></td>
+                                    <td class="py-4">Feb 18, 2026 • Dr. Lina Foster</td>
+                                    <td class="py-4"><span class="text-xs font-semibold text-green-700">Active</span></td>
+                                    <td class="py-4 text-green-600 font-semibold">Action</td>
+                                </tr>
+                                <tr class="border-t border-slate-100 hover:bg-slate-50">
+                                    <td class="py-4 px-5 font-bold text-slate-900">MRN-002197</td>
+                                    <td class="py-4">Alya Putri, 32y / F</td>
+                                    <td class="py-4"><span class="px-3 py-1 rounded-full bg-slate-200 text-slate-600 text-xs font-semibold">Self-Pay</span></td>
+                                    <td class="py-4">Feb 12, 2026 • Dr. Kevin Huang</td>
+                                    <td class="py-4"><span class="text-xs font-semibold text-slate-500">Discharged</span></td>
+                                    <td class="py-4 text-green-600 font-semibold">Action</td>
+                                </tr>
+                                <tr class="border-t border-slate-100 hover:bg-slate-50">
+                                    <td class="py-4 px-5 font-bold text-slate-900">MRN-002110</td>
+                                    <td class="py-4">Budi Santoso, 54y / M</td>
+                                    <td class="py-4"><span class="px-3 py-1 rounded-full bg-green-400 text-white text-xs font-semibold">Verified Insurance</span></td>
+                                    <td class="py-4">Feb 08, 2026 • Dr. Aisha Rahman</td>
+                                    <td class="py-4"><span class="text-xs font-semibold text-amber-600">Transferred</span></td>
+                                    <td class="py-4 text-green-600 font-semibold">Action</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Registration Modal (Static Preview) -->
+                <div class="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Registration Form</h2>
+                        <button class="text-xs text-slate-500">Close</button>
+                    </div>
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div>
+                            <label class="text-xs text-slate-500">Full Name</label>
+                            <input class="w-full mt-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200" placeholder="Full name">
+                        </div>
+                        <div>
+                            <label class="text-xs text-slate-500">NIK</label>
+                            <input class="w-full mt-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200" placeholder="NIK">
+                        </div>
+                        <div>
+                            <label class="text-xs text-slate-500">Medical Record ID</label>
+                            <input class="w-full mt-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200" placeholder="MRN-">
+                        </div>
+                        <div>
+                            <label class="text-xs text-slate-500">Address</label>
+                            <input class="w-full mt-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200" placeholder="Address">
+                        </div>
+                        <div>
+                            <label class="text-xs text-slate-500">Emergency Contact</label>
+                            <input class="w-full mt-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200" placeholder="Contact number">
+                        </div>
+                        <div>
+                            <label class="text-xs text-slate-500">Insurance</label>
+                            <input class="w-full mt-1 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200" placeholder="BPJS / Private">
+                        </div>
+                    </div>
+                    <button class="mt-5 px-4 py-2 rounded-xl bg-green-400 text-green-900 text-sm font-semibold">Save Patient</button>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
